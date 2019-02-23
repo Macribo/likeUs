@@ -24,6 +24,20 @@ html, body{
     opacity:0.01;
 }
 
+.select-pig{
+    opacity:0;
+    display:none;
+}
 
 
+.pigs{
+    display:none;
+    background-color:rgb(77, 77, 77);
+}
 
+.pig{
+
+    padding:10px;
+    margin:10px;
+    border:10px;
+}
