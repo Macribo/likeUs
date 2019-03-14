@@ -22,8 +22,8 @@ export default class Likeus extends Component {
           width: '100%',
           height: '100%',
           backgroundColor: 'black',
-          left: '0',
-          border: '2px solid orange'
+          left: '0'
+          //   border: '2px solid orange'
         }}
       >
         <Container id="main-div">

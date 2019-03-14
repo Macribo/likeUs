@@ -28,8 +28,9 @@ export default class Example extends React.Component {
 
   toggleCollapse = () => {
     this.props.toggleCollapse();
+    if (this.state.modal) this.toggle();
   };
-
+  okClick = () => {};
   render() {
     return (
       <Container>
@@ -77,7 +78,7 @@ export default class Example extends React.Component {
               alignItems: 'center'
             }}
           >
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={this.toggleCollapse}>
               Okay
             </Button>
           </ModalFooter>

@@ -4,7 +4,7 @@ export default class Pig extends Component {
   selectedPig = '';
   examinePig = e => {
     // this.selectedPig = e.target.id;
-    alert(this.props.id);
+    // alert(this.props.id);
   };
 
   updateJumbotron = e => {
@@ -16,8 +16,10 @@ export default class Pig extends Component {
       weight: this.props.weight,
       health: this.props.health
     };
+    let showDoor = true;
+
     this.props.updateJumbotronHandler(pigStatus);
-    this.props.fadeInDoor();
+    this.props.fadeInDoorHandler(showDoor);
   };
   render() {
     return (
