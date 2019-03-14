@@ -26,13 +26,22 @@ export default class Example extends React.Component {
     }));
   }
 
+  toggleCollapse = () => {
+    this.props.toggleCollapse();
+  };
+
   render() {
     return (
       <Container>
         {' '}
         <Row>
           <Col xs="6" sm="4">
-            <Button className="btn-block" color="secondary" size="lg">
+            <Button
+              className="btn-block"
+              color="secondary"
+              size="lg"
+              onClick={this.toggleCollapse}
+            >
               Run
             </Button>
           </Col>
@@ -54,7 +63,7 @@ export default class Example extends React.Component {
           className={this.props.className}
         >
           <ModalHeader toggle={this.toggle}>
-            Most reasonable people would never knowingly harm an animal.{' '}
+            Most reasonable people would never deliberately harm an animal.{' '}
           </ModalHeader>
           <ModalBody>
             Yet the meat industry can barely keep up with demand. This is

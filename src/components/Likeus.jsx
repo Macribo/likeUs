@@ -3,10 +3,17 @@ import Title from './Title';
 import SelectPig from './SelectPig';
 import KillPig from './KillPig';
 import BleedPig from './BleedPig';
-
+import { Collapse } from 'react-collapse';
 import Menu from './Menu';
 import { Container, Row, Col } from 'reactstrap';
 export default class Likeus extends Component {
+  state = {
+    showMenu: true,
+    pSelectIsOpened: false
+  };
+  toggleCollapse = () => {
+    this.setState({ pSelectIsOpened: true, showMenu: false });
+  };
   render() {
     return (
       <div
@@ -23,11 +30,16 @@ export default class Likeus extends Component {
           <Row>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Title />
-              {/* <Menu /> */}
-
-              <SelectPig />
-              <KillPig />
-              <BleedPig />
+              {this.state.showMenu}
+              <Collapse isOpened={this.state.showMenu}>
+                {' '}
+                <Menu toggleCollapse={this.toggleCollapse} />
+              </Collapse>
+              <Collapse isOpened={this.state.pSelectIsOpened}>
+                <SelectPig />
+              </Collapse>
+              {/* <KillPig /> */}
+              {/* <BleedPig /> */}
               {/* <SelectPig/> */}
             </Col>
           </Row>
