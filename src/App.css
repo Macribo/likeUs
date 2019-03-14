@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#full {
+  /* background-color: black;
+  height: 100%;
+  width: 100%;
+  border: 2px solid red; */
+}
+/* #main-div {
+  top: 0;
+  left: 0;
+
+  position: absolute;
+  border: 2px solid orange;
+} */
+.container {
+  /* border: 2px solid rgb(6, 6, 7); */
+  /* text-align: right; */
+}
+
+.center {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron.jumbotron-fluid {
+  background-color: black;
+  padding-bottom: 10px;
+  /* border: 2px solid green; */
+}
+#select-pig {
+  /* max-height: 30%; */
+  padding: 25px;
+}
+
+/* .modal-header,
+.modal-body,
+.modal-footer,
+.modal-title,
+.modal-title h1 {
+  background-color: rgb(87, 86, 86);
+}
+.modal-content {
+  border: 2px solid green;
+} */
+
+.modal-header h5 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid blue; */
+}
+
+.pig {
+  height: 120px;
+  width: 120px;
+  background-image: url('./images/pig3.png');
+  /* border: 3px solid white; */
+  margin: 10px;
+  background-repeat: no-repeat;
+}
+
+.door {
+  /* opacity: 0; */
+  height: 220px;
+  width: 120px;
+  background-image: url('./images/door.jpg');
+  /* border: 3px solid white; */
+  margin: 10px;
+  background-repeat: no-repeat;
+}
+
+.pig:hover {
+  background-size: 110%;
+}
+.pigholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
