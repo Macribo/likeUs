@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button, Fade } from 'reactstrap';
+import { Jumbotron, Col, Row, Fade } from 'reactstrap';
 import Pig from './Pig';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
+// import { Route } from 'react-router-dom';
 
 export default class SelectPig extends Component {
   constructor(props) {
@@ -36,22 +37,57 @@ export default class SelectPig extends Component {
     this.setState({
       fadeIn: !this.state.fadeIn
     });
+    setTimeout(function() {
+      window.open('./killpig');
+    }, 500);
   }
   dropPig = () => {};
   render() {
     return (
       <Fade in={this.state.fadeIn}>
         <div>
-          <Jumbotron id="select-pig" style={{ height: '320px' }}>
-            <h1 className="display-3">Select Pig</h1>
-            <p className="lead">{this.state.jumbotron1}</p>
-            <p className="lead">{this.state.jumbotron2}</p>
-            <p className="lead">{this.state.jumbotron3}</p>
+          <Jumbotron
+            id="select-pig"
+            style={{ height: '330px', padding: '10px' }}
+          >
+            <Row>
+              <Col xs="8">
+                <h1 className="display-3">Select Pig</h1>
+                <p className="lead">{this.state.jumbotron1}</p>
+                <p className="lead">{this.state.jumbotron2}</p>
+                <p className="lead">{this.state.jumbotron3}</p>
+              </Col>
+              <Col
+                xs="4"
+                style={{
+                  margin: 0
+                }}
+              >
+                {' '}
+                <Collapse isOpened={this.state.doorCollapsed ? true : false}>
+                  <Droppable
+                    align="right"
+                    types={['pig']} // <= allowed drop types
+                    // onDrop={this.onDrop.bind(this)}>
+                    onDrop={this.toggle}
+                  >
+                    {' '}
+                    <div
+                      className="door"
+                      style={{
+                        margin: 0
+                      }}
+                    />
+                    <h6 align="center">KILL ROOM</h6>
+                  </Droppable>
+                </Collapse>
+              </Col>
+            </Row>
             <hr className="my-2" />
             <p>
               Mouseover an animal to examine it. When you've made your
-              selection, drag it down to the slaughter area.
-            </p>
+              selection, drag it to the kill room.
+            </p>{' '}
           </Jumbotron>
           <div className="pigholder">
             <Draggable type="pig" data="pig0">
@@ -99,23 +135,6 @@ export default class SelectPig extends Component {
               />
             </Draggable>
           </div>
-          <Droppable
-            align="center"
-            types={['pig']} // <= allowed drop types
-            // onDrop={this.onDrop.bind(this)}>
-            onDrop={this.toggle}
-          >
-            <Collapse isOpened={this.state.doorCollapsed ? true : false}>
-              <div
-                className="door"
-                style={{
-                  border: '3px solid black'
-                  //   opacity: this.state.doorVisibile
-                }}
-              />
-              <h5>KILL ROOM 1</h5>
-            </Collapse>
-          </Droppable>
         </div>
       </Fade>
     );

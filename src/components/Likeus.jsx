@@ -29,18 +29,14 @@ export default class Likeus extends Component {
         <Container id="main-div">
           <Row>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
-              <Title />
-              {this.state.showMenu}
               <Collapse isOpened={this.state.showMenu}>
-                {' '}
+                <Title />
+                {/* {this.state.showMenu}{' '} */}
                 <Menu toggleCollapse={this.toggleCollapse} />
               </Collapse>
               <Collapse isOpened={this.state.pSelectIsOpened}>
                 <SelectPig />
               </Collapse>
-              {/* <KillPig /> */}
-              {/* <BleedPig /> */}
-              {/* <SelectPig/> */}
             </Col>
           </Row>
         </Container>
