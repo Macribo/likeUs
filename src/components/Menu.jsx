@@ -54,7 +54,7 @@ export default class Example extends React.Component {
               size="lg"
               onClick={this.toggle}
             >
-              Explain
+              About
             </Button>
           </Col>
         </Row>
@@ -67,9 +67,9 @@ export default class Example extends React.Component {
             Most reasonable people would never deliberately harm an animal.{' '}
           </ModalHeader>
           <ModalBody>
-            Yet the meat industry can barely keep up with demand. This is
-            madness. When we are informed, and when we are reasonable, animals
-            likeUs choose compassionate alternatives.
+            Yet the meat branch of human industry is killing animals by the
+            fuck-ton. This is madness. When we are informed, and when we are
+            reasonable, animals likeUs go vegan.
           </ModalBody>
           <ModalFooter
             style={{

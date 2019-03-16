@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import SelectPig from './SelectPig';
-import KillPig from './KillPig';
-import BleedPig from './BleedPig';
+
 import { Collapse } from 'react-collapse';
 import Menu from './Menu';
 import { Container, Row, Col } from 'reactstrap';

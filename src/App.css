@@ -86,7 +86,7 @@
 }
 
 .pig:hover {
-  background-size: 110%;
+  background-size: 90%;
 }
 .pigholder {
   /* margin-top: -5%; */
@@ -96,4 +96,65 @@
 }
 .lead {
   /* color: blue; */
+}
+
+#pig-to-kill {
+  height: 320px;
+  width: 320px;
+  background-image: url('./images/pig2.png');
+  /* border: 3px solid white; */
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#pig-to-kill:hover {
+  /* background-size: 105%; */
+  background-image: url('./images/pig2b.png');
+}
+.dropdown-menu,
+.show {
+  /* border: 2px solid green;
+  margin: 20px;
+  padding: 10px;
+  z-index: 5000;
+  position: fixed;
+  display: flex;
+  align-content: center;
+  align-items: center; */
+  /* display: flex;
+  align-content: center;
+  justify-content: center; */
+}
+#dropdown1 {
+  /* position: fixed; */
+  /* border: 2px blueviolet; */
+  /* padding: 50px; */
+  /* margin: 50px; */
+  /* display: flex; */
+  /* top: 58%;
+  left: 48%; */
+  /* z-index: 55000; */
+  /* display: none; */
+}
+
+.dropdown {
+  /* margin: 20px;
+  z-index: 55000 !important;
+  position: fixed;
+
+  border: 2px solid blueviolet; */
+  /* display: none; */
+  /* width: 20%; */
+  /* display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 5000; */
+  /* margin: 20px; */
+  /* padding: 0 50px 0 50px; */
+  /* z-index: 50000; */
+}
+.dropdown-toggle {
+}
+.stunbowtron {
 }
