@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
-import Locker from '../images/locker.png';
-import Stunner from '../images/knife.png';
-import Club from '../images/hanged_pig.png';
+import Locker from '../images/slaughter-mask02.png';
+import Stunner from '../images/baton.png';
+import Club from '../images/bolter-gun.png';
+import ToolTitle from './ToolTitle';
 
 import { Jumbotron, Button } from 'reactstrap';
 import Tool from './Tool';
@@ -11,12 +12,15 @@ import { Container, Row, Col } from 'reactstrap';
 export default class StunPig extends Component {
   state = {
     defaultLead: `
-      UN Guidlelines for Slaughtering Animals
+      
       `,
     selectedTool: 'head slam',
     locker: `url(${Locker})`,
     stunner: `url(${Stunner})`,
-    club: `url(${Club})`
+    club: `url(${Club})`,
+    textClub: 'Club',
+    textMask: `Slaughter-mask`,
+    textGun: 'Gun'
   };
   possibleResults = {
     clubOrPoleaxe: [
@@ -61,12 +65,18 @@ export default class StunPig extends Component {
           }}
           align="center"
         >
-          <div id="pig-to-kill" onClick={this.killPig} />
+          <Droppable>
+            <div id="pig-to-kill" onClick={this.killPig} />
+          </Droppable>
           <Jumbotron
             id="stunbowtron"
             style={{ margin: '50px 0px 50px 0', margin: 0 }}
           >
-            <h5 className="display-4" style={{ paddingBottom: '10px' }}>
+            <h5
+              className="display-4"
+              align="right"
+              style={{ paddingBottom: '10px', margin: '0 20% 0 0' }}
+            >
               Stun the Pig
             </h5>
 
@@ -75,7 +85,7 @@ export default class StunPig extends Component {
             <Row
             // style={{ border: '3px solid orange' }}
             >
-              <Col>
+              <Col xs="4">
                 <p id="guide">
                   {' '}
                   The blow must be dealt with precision and force, <br />
@@ -86,15 +96,34 @@ export default class StunPig extends Component {
                 <p className="lead">{this.state.defaultLead}</p>
               </Col>
 
-              <Col>
+              <Col xs="8">
                 {/* <Button color="warning"> */}
                 <div className="tools">
-                  <Tool ToolName={'Club'} src={this.state.club} />
-                  <Tool
-                    ToolName={'Slaughtering Mask'}
-                    src={this.state.stunner}
-                  />
-                  <Tool ToolName={'Electrical Stun'} src={this.state.locker} />
+                  <Draggable type="tool" data="tool0">
+                    <Tool ToolName={'Gun'} src={this.state.club} />
+                  </Draggable>
+                  <Draggable type="tool" data="tool1">
+                    <Tool ToolName={'Club'} src={this.state.stunner} />
+                  </Draggable>
+                  <Draggable type="tool" data="tool2">
+                    <Tool
+                      ToolName={'Slaughtering-Mask'}
+                      src={this.state.locker}
+                    />{' '}
+                  </Draggable>
+                </div>
+                <div
+                  style={{
+                    // border: '2px solid red',
+                    display: 'flex',
+                    justifyContent: 'space-evenly',
+                    marginTop: '-40px'
+                  }}
+                >
+                  <ToolTitle Msg={this.state.textGun} />
+                  <span> </span>
+                  <span> </span> <ToolTitle Msg={this.state.textClub} />
+                  <span> </span> <ToolTitle Msg={this.state.textMask} />
                 </div>
               </Col>
             </Row>

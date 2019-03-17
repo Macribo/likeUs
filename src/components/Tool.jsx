@@ -25,15 +25,13 @@ export default class Tool extends Component {
       <div
         className="tool"
         style={{
-          backgroundImage: this.props.src,
+          backgroundImage: this.props.src
 
-          border: '2px solid blue'
+          //   border: '2px solid blue'
         }}
         // onMouseOver={this.updateJumbotron}
         // onClick={this.examineTool}
-      >
-        <p>{this.props.ToolName}</p>
-      </div>
+      />
     );
   }
 }
