@@ -14,8 +14,8 @@ class App extends Component {
           {/* <Sitenav /> */}
           <Switch>
             <Route exact path="/" component={Likeus} />
-            <Route exact path="/killpig" component={StunPig} />
-            <Route exact path="/bleedpig" component={BleedPig} />
+            <Route exact path="/stunpig" component={StunPig} />
+            {/* <Route exact path="/bleedpig" component={BleedPig} /> */}
             <Route component={Likeus} />
           </Switch>
         </div>

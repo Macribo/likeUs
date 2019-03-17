@@ -38,7 +38,7 @@ export default class SelectPig extends Component {
       fadeIn: !this.state.fadeIn
     });
     setTimeout(function() {
-      window.open('./killpig');
+      window.open('./stunpig');
     }, 500);
   }
   dropPig = () => {};

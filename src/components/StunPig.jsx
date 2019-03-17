@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-
+import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
 
 import { Jumbotron, Button } from 'reactstrap';
-import ToggleTools from './ToggleTools';
+import Tool from './Tool';
 import { Container, Row, Col } from 'reactstrap';
 export default class StunPig extends Component {
   state = {
+    defaultLead: `
+      UN Guidlelines for Slaughtering Animals
+      `,
     selectedTool: 'head slam'
   };
   possibleResults = {
     clubOrPoleaxe: [
       `You have chosen to slam this animal's head against the floor until she is dead; in accordance with the EU guidelines of order to consume Breith ar an cluais.`,
       `Chas uait é agus breith ar, ós cionn a gcrúbín .
-Lúas fó dheis é.
-Lúasc fó chlé é, //chas tímpeal é ? lúasc fó dheis é. Greidhm agat ar ?
-Luasc i gcoinne an túrlár é
-: breith greidhm ar agus lúasc é 
-
-: lúasc fó dheis é-
-chas tímpeal é ? lúasc fó chlé é? chas tímpeal é?
-lúasc fó dheis é,`,
+      Lúas fó dheis é.
+      Lúasc fó chlé é, //chas tímpeal é ? lúasc fó dheis é. Greidhm agat ar ?
+      Luasc i gcoinne an túrlár é
+      : breith greidhm ar agus lúasc é 
+      
+      : lúasc fó dheis é-
+      chas tímpeal é ? lúasc fó chlé é? chas tímpeal é?
+      lúasc fó dheis é,`,
       `Direct blow to skull using a club or poleaxe. The blow must be dealt with precision and force, so that the skull is immediately smashed, causing instantaneous unconsciousness. Pigs have a well-developed frontal cavity so the blow should be aimed slightly above the eyes.`
     ],
     slaughteringMask: [
@@ -40,18 +43,12 @@ lúasc fó dheis é,`,
           height: '100%',
           backgroundColor: 'black',
           left: '0',
-          display: 'flex',
-          //   justifyContent: 'center',
-          //   alignItems: 'center',
-          border: '2px solid red'
-          //
+          display: 'flex'
         }}
       >
         <Container
           id="main-div"
           style={{
-            border: '2px solid orange',
-            // textAlign: 'center',
             alignContent: 'center',
             justifyContent: 'center',
             alignItems: 'center'
@@ -60,25 +57,36 @@ lúasc fó dheis é,`,
         >
           <div id="pig-to-kill" onClick={this.killPig} />
           <Jumbotron
-            className="stunbotron"
+            id="stunbowtron"
             style={{ margin: '50px 0px 50px 0', margin: 0 }}
           >
-            <h1 className="display-3">Stun the animal.</h1>
+            <h5 className="display-4" style={{ paddingBottom: '10px' }}>
+              Stun the Pig
+            </h5>
 
-            <p className="lead">Select a stunner from the menu</p>
+            {/* <p className="lead">Select a stunner from the menu</p> */}
 
-            <Row style={{ border: '3px solid orange' }}>
+            <Row
+            // style={{ border: '3px solid orange' }}
+            >
               <Col>
-                <p className="lead">
-                  The blow must be dealt with precision and force, so that the
-                  skull is immediately smashed, causing instantaneous
-                  unconsciousness.
+                <p id="guide">
+                  {' '}
+                  The blow must be dealt with precision and force, <br />
+                  so that the skull is immediately smashed,
+                  <br />
+                  causing instantaneous unconsciousness
                 </p>
+                <p className="lead">{this.state.defaultLead}</p>
               </Col>
+
               <Col>
-                <Button color="warning">
-                  Stun <i className="fas fa-toolbox " />
-                </Button>{' '}
+                {/* <Button color="warning"> */}
+                <div className="tools">
+                  <Tool />
+                  <Tool />
+                  <Tool />
+                </div>
               </Col>
             </Row>
           </Jumbotron>
