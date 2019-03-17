@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "99e6ed83c4fb6614839ccb814fc957aa",
-    "url": "/static/media/pig2.99e6ed83.png"
+    "revision": "33222a588b85a3e46f19cd8040656f65",
+    "url": "/static/media/pig2b.33222a58.png"
   },
   {
     "revision": "df3eb7819153d8d040eb",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/door.cb0d15b9.jpg"
   },
   {
-    "revision": "33222a588b85a3e46f19cd8040656f65",
-    "url": "/static/media/pig2b.33222a58.png"
+    "revision": "99e6ed83c4fb6614839ccb814fc957aa",
+    "url": "/static/media/pig2.99e6ed83.png"
   },
   {
     "revision": "df3eb7819153d8d040eb",
