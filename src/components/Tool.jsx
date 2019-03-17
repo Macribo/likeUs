@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 export default class Tool extends Component {
   selectedTool = '';
   examineTool = e => {
@@ -26,11 +25,15 @@ export default class Tool extends Component {
       <div
         className="tool"
         style={{
+          backgroundImage: this.props.src,
+
           border: '2px solid blue'
         }}
         // onMouseOver={this.updateJumbotron}
         // onClick={this.examineTool}
-      />
+      >
+        <p>{this.props.ToolName}</p>
+      </div>
     );
   }
 }

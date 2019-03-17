@@ -178,19 +178,19 @@
   /* display: none; */
 }
 .tools {
-  /* border: 2px solid purple; */
+  height: 200px;
+  border: 2px solid purple;
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
 }
 
 .tool {
-  height: 50px;
-  width: 50px;
-  /* background: '/images/locker.png'; */
+  background-size: contain;
   border: '2px solid blue' !important;
   z-index: 5000;
   position: relative;
+  background-repeat: no-repeat;
 }
 #guide {
   margin-top: 10px;

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
+import Locker from '../images/locker.png';
+import Stunner from '../images/knife.png';
+import Club from '../images/hanged_pig.png';
 
 import { Jumbotron, Button } from 'reactstrap';
 import Tool from './Tool';
@@ -10,7 +13,10 @@ export default class StunPig extends Component {
     defaultLead: `
       UN Guidlelines for Slaughtering Animals
       `,
-    selectedTool: 'head slam'
+    selectedTool: 'head slam',
+    locker: `url(${Locker})`,
+    stunner: `url(${Stunner})`,
+    club: `url(${Club})`
   };
   possibleResults = {
     clubOrPoleaxe: [
@@ -83,9 +89,12 @@ export default class StunPig extends Component {
               <Col>
                 {/* <Button color="warning"> */}
                 <div className="tools">
-                  <Tool />
-                  <Tool />
-                  <Tool />
+                  <Tool ToolName={'Club'} src={this.state.club} />
+                  <Tool
+                    ToolName={'Slaughtering Mask'}
+                    src={this.state.stunner}
+                  />
+                  <Tool ToolName={'Electrical Stun'} src={this.state.locker} />
                 </div>
               </Col>
             </Row>
