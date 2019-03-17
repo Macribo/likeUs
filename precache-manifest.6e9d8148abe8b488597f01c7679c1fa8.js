@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/Macribo/likeUs/static/css/2.12bfc508.chunk.css"
   },
   {
-    "revision": "f1f3f179a5664b1347c11092f8070d5a",
+    "revision": "e3f95548b890b0f0464fa70fdabae800",
     "url": "/Macribo/likeUs/index.html"
   }
 ];
