@@ -8,19 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    return (
-      <Router>
-        <div className="App">
-          {/* <Sitenav /> */}
-          <Switch>
-            <Route exact path="/" component={Likeus} />
-            <Route exact path="/stunpig" component={StunPig} />
-            {/* <Route exact path="/bleedpig" component={BleedPig} /> */}
-            <Route component={Likeus} />
-          </Switch>
-        </div>
-      </Router>
-    );
+    return <div className="test">hi</div>;
   }
 }
 
