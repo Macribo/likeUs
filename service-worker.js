@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Macribo/likeUs/precache-manifest.6e9d8148abe8b488597f01c7679c1fa8.js"
+  "/Macribo/likeUs/precache-manifest.881dbe502fefebe0ee9efee692260203.js"
 );
 
 workbox.clientsClaim();
