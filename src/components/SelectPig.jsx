@@ -13,7 +13,7 @@ export default class SelectPig extends Component {
   }
 
   state = {
-    jumbotron1: `We're going to process a single medium sized pig from snout to tail.`,
+    jumbotron1: `Let's to process a single medium sized pig from snout to tail.`,
     doorCollapsed: false
   };
   fadeInDoor = () => {
