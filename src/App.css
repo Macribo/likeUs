@@ -94,10 +94,11 @@
   justify-content: center;
   align-items: center;
 }
-.lead {
-  /* color: blue; */
+#isolated-animal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 #pig-to-kill {
   height: 320px;
   width: 320px;
@@ -112,6 +113,10 @@
   /* background-size: 105%; */
   background-image: url('./images/pig2b.png');
 }
+.lead {
+  /* color: blue; */
+}
+
 .dropdown-menu
 /* .show */
  {
@@ -166,27 +171,45 @@
 }
 
 #toggle-tools {
-  /* border: 3px solid greenyellow; */
-  /* z-index: 5000;
+  border: 3px solid greenyellow;
+  z-index: 5000;
   height: 100%;
   width: 100%;
   top: 50%;
   left: 50%;
-  position: fixed; */
-  /* padding: 50px; */
+  position: fixed;
+  padding: 50px;
 
   /* display: none; */
 }
 .tools {
+  background: gray;
   height: 270px;
   /* border: 2px solid purple; */
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 20px;
-  padding-bottom: 0;
   margin-bottom: 0;
 }
-
+.btn-outline-warning {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.kill-tools {
+  padding: 0px;
+  margin: 15px;
+}
+.kill-with {
+  /* background-color: slategray; */
+  /* border: 2px solid gray; */
+  border-radius: 5px;
+  padding: 10px;
+  /* align-items: initial; */
+  align-items: center;
+  justify-content: center;
+}
 .tool {
   height: 220px;
   width: 220px;

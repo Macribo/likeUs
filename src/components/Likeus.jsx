@@ -28,7 +28,7 @@ export default class Likeus extends Component {
       >
         {/* <Container id="main-div" style={{ margin: 0 }}> */}
         <Row>
-          <Col sm="12" md={{ size: 9, offset: 3 }}>
+          <Col sm="12" md={{ size: 10, offset: 1 }}>
             <Collapse isOpened={this.state.showMenu}>
               <Title />
 

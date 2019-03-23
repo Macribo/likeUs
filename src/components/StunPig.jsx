@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Col, Row, Fade } from 'reactstrap';
+import { Jumbotron, Col, Row, Fade, Button } from 'reactstrap';
 import Pig from './Pig';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
@@ -92,20 +92,13 @@ export default class StunPig extends Component {
     return (
       <Fade in={this.state.fadeIn}>
         <div>
-          {/* <Container
-            style={{
-              // position: 'absolute',
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'black',
-              left: '0',
-              display: 'flex'
-            }}
-          >
-            <Droppable>
-              <div id="pig-to-kill" onClick={this.killPig} />
-            </Droppable> */}
-
+          <div id="isolated-animal">
+            <div id="pig-to-kill">
+              <Droppable>
+                <div onClick={this.killPig} />
+              </Droppable>
+            </div>
+          </div>
           <Jumbotron
             id="stunbowtron"
             style={{ margin: '50px 0px 50px 0', margin: 0 }}
@@ -118,11 +111,9 @@ export default class StunPig extends Component {
               Stun the Pig
             </h5>
 
-            {/* <p className="lead">Select a stunner from the menu</p> */}
+            <p className="lead">Select a stunner from the menu</p>
 
-            <Row
-            // style={{ border: '3px solid orange' }}
-            >
+            <Row>
               <Col xs="4">
                 <p id="guide">
                   {' '}
@@ -134,22 +125,47 @@ export default class StunPig extends Component {
                 <p className="lead">{this.state.defaultLead}</p>
               </Col>
 
-              <Col xs="8">
-                {/* <Button color="warning"> */}
-                <div className="tools">
-                  <Draggable type="tool" data="tool0">
-                    <Tool ToolName={'Gun'} src={this.state.club} />
-                  </Draggable>
-                  <Draggable type="tool" data="tool1">
-                    <Tool ToolName={'Club'} src={this.state.stunner} />
-                  </Draggable>
-                  <Draggable type="tool" data="tool2">
-                    <Tool
-                      ToolName={'Slaughtering-Mask'}
-                      src={this.state.locker}
-                    />{' '}
-                  </Draggable>
+              <div className="tools col-8">
+                <div className="kill-with">
+                  <button
+                    type="button"
+                    className="btn  btn-outline-warning btn-lg"
+                  >
+                    <img className="kill-tools" src="images/slam2.png" />
+                    <br /> Head Slam
+                  </button>
+                </div>{' '}
+                <div className="kill-with">
+                  <button
+                    type="button"
+                    className="btn  btn-outline-warning btn-lg"
+                  >
+                    <img className="kill-tools" src="images/bolter-gun.png" />
+                    <br /> Bolt-Gun
+                  </button>
+                </div>{' '}
+                <div className="kill-with">
+                  <button
+                    type="button"
+                    className="btn  btn-outline-warning btn-lg"
+                  >
+                    <img className="kill-tools" src="images/baton.png" />
+                    <br /> Club
+                  </button>
+                </div>{' '}
+                <div className="kill-with">
+                  <button
+                    type="button"
+                    className="btn  btn-outline-warning btn-lg"
+                  >
+                    <img
+                      className="kill-tools"
+                      src="images/slaughter-mask02.png"
+                    />
+                    <br /> Slaughter-Mask
+                  </button>
                 </div>
+                {/* </div> */}
                 <div
                   style={{
                     // border: '2px solid red',
@@ -157,13 +173,8 @@ export default class StunPig extends Component {
                     justifyContent: 'space-evenly',
                     marginTop: '-40px'
                   }}
-                >
-                  <ToolTitle Msg={this.state.textGun} />
-                  <span> </span>
-                  <span> </span> <ToolTitle Msg={this.state.textClub} />
-                  <span> </span> <ToolTitle Msg={this.state.textMask} />
-                </div>
-              </Col>
+                />
+              </div>
             </Row>
           </Jumbotron>
           {/* </Container> */}
