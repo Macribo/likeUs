@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import SelectPig from './SelectPig';
+import StunPig from './StunPig';
 
 import { Collapse } from 'react-collapse';
 import Menu from './Menu';
@@ -16,29 +17,29 @@ export default class Likeus extends Component {
   render() {
     return (
       <div
+        id="like-us-main-div"
         style={{
           position: 'absolute',
           width: '100%',
           height: '100%',
           backgroundColor: 'black',
           left: '0'
-          //   border: '2px solid orange'
         }}
       >
-        <Container id="main-div">
-          <Row>
-            <Col sm="12" md={{ size: 6, offset: 3 }}>
-              <Collapse isOpened={this.state.showMenu}>
-                <Title />
-                {/* {this.state.showMenu}{' '} */}
-                <Menu toggleCollapse={this.toggleCollapse} />
-              </Collapse>
-              <Collapse isOpened={this.state.pSelectIsOpened}>
-                <SelectPig />
-              </Collapse>
-            </Col>
-          </Row>
-        </Container>
+        {/* <Container id="main-div" style={{ margin: 0 }}> */}
+        <Row>
+          <Col sm="12" md={{ size: 9, offset: 3 }}>
+            <Collapse isOpened={this.state.showMenu}>
+              <Title />
+
+              <Menu toggleCollapse={this.toggleCollapse} />
+            </Collapse>
+            <Collapse isOpened={this.state.pSelectIsOpened}>
+              <StunPig />
+            </Collapse>
+          </Col>
+        </Row>
+        {/* </Container> */}
       </div>
     );
   }

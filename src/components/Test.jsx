@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Jumbotron, Col, Row, Fade } from 'reactstrap';
-import Pig from './Pig';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import { Collapse } from 'react-collapse';
 import Locker from '../images/slaughter-mask02.png';
@@ -8,23 +6,14 @@ import Stunner from '../images/baton.png';
 import Club from '../images/bolter-gun.png';
 import ToolTitle from './ToolTitle';
 
+import { Jumbotron, Button } from 'reactstrap';
 import Tool from './Tool';
-import { Container } from 'reactstrap';
-
-export default class StunPig extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { fadeIn: true };
-    this.toggle = this.toggle.bind(this);
-  }
-  //////vvvvvSTATEvvvvvSTATEvvvvvSTATE
-
+import { Container, Row, Col } from 'reactstrap';
+export default class Test extends Component {
   state = {
-    jumbotron1: `We're going to process a single medium sized pig from snout to tail.`,
-    doorCollapsed: false,
     defaultLead: `
 
-    `,
+      `,
     selectedTool: 'head slam',
     locker: `url(${Locker})`,
     stunner: `url(${Stunner})`,
@@ -33,15 +22,6 @@ export default class StunPig extends Component {
     textMask: `Slaughter-mask`,
     textGun: 'Gun'
   };
-
-  //////^^^^^STATE^^^^^STATE^^^^^STATE
-
-  fadeInDoor = () => {
-    // Set the opacity of the element to 0
-    this.setState({ doorCollapsed: true });
-    // alert('hear door');
-  };
-
   possibleResults = {
     clubOrPoleaxe: [
       `You have chosen to slam this animal's head against the floor until she is dead; in accordance with the EU guidelines of order to consume Breith ar an cluais.`,
@@ -64,48 +44,30 @@ export default class StunPig extends Component {
     ]
   };
 
-  updateJumbotron = pigStatus => {
-    console.log(pigStatus.age);
-    console.log(pigStatus.weight);
-    console.log(pigStatus.health);
-
-    this.setState({
-      jumbotron1: 'Age:    ' + pigStatus.age,
-      jumbotron2: 'Weight:  ' + pigStatus.weight,
-      jumbotron3: 'Health:  ' + pigStatus.health
-    });
-  };
-
-  toggle() {
-    this.setState({
-      fadeIn: !this.state.fadeIn
-    });
-    setTimeout(function() {
-      window.open('./stunpig');
-    }, 500);
-  }
-  dropPig = () => {};
-
-  //vvvvv/RENDER\vvvvv/RENDER\vvvvv/RENDER\
-
   render() {
     return (
-      <Fade in={this.state.fadeIn}>
-        <div>
-          {/* <Container
-            style={{
-              // position: 'absolute',
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'black',
-              left: '0',
-              display: 'flex'
-            }}
-          >
-            <Droppable>
-              <div id="pig-to-kill" onClick={this.killPig} />
-            </Droppable> */}
-
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'black',
+          left: '0',
+          display: 'flex'
+        }}
+      >
+        <Container
+          id="main-div"
+          style={{
+            alignContent: 'center',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+          align="center"
+        >
+          <Droppable>
+            <div id="pig-to-kill" onClick={this.killPig} />
+          </Droppable>
           <Jumbotron
             id="stunbowtron"
             style={{ margin: '50px 0px 50px 0', margin: 0 }}
@@ -166,10 +128,8 @@ export default class StunPig extends Component {
               </Col>
             </Row>
           </Jumbotron>
-          {/* </Container> */}
-        </div>
-      </Fade>
+        </Container>
+      </div>
     );
   }
-  //^^^^^/RENDER\^^^^^/RENDER\^^^^^/RENDER\
 }
