@@ -7,12 +7,24 @@ import { Collapse } from 'react-collapse';
 import Menu from './Menu';
 import { Container, Row, Col } from 'reactstrap';
 export default class Likeus extends Component {
+  //////vvvvvSTATEvvvvvSTATEvvvvvSTATE///
+
   state = {
     showMenu: true,
-    pSelectIsOpened: false
+    pSelectIsOpened: false,
+    pStunIsOpened: false
   };
-  toggleCollapse = () => {
+
+  //////^^^^^STATE^^^^^STATE^^^^^STATE
+
+  toggleCollapseMenu = () => {
     this.setState({ pSelectIsOpened: true, showMenu: false });
+  };
+  toggleCollapseStun = () => {
+    alert('stunned');
+  };
+  toggleCollapseSelect = () => {
+    this.setState({ pSelectIsOpened: false, pStunIsOpened: true });
   };
   render() {
     return (
@@ -32,10 +44,13 @@ export default class Likeus extends Component {
             <Collapse isOpened={this.state.showMenu}>
               <Title />
 
-              <Menu toggleCollapse={this.toggleCollapse} />
+              <Menu toggleCollapseMenu={this.toggleCollapseMenu} />
             </Collapse>
             <Collapse isOpened={this.state.pSelectIsOpened}>
-              <StunPig />
+              <SelectPig toggleCollapseSelect={this.toggleCollapseSelect} />
+            </Collapse>
+            <Collapse isOpened={this.state.pStunIsOpened}>
+              <StunPig toggleCollapseStun={this.toggleCollapseStun} />
             </Collapse>
           </Col>
         </Row>

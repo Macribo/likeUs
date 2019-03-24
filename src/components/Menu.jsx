@@ -27,7 +27,7 @@ export default class Example extends React.Component {
   }
 
   toggleCollapse = () => {
-    this.props.toggleCollapse();
+    this.props.toggleCollapseMenu();
     if (this.state.modal) this.toggle();
   };
   okClick = () => {};

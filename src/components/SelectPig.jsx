@@ -11,11 +11,15 @@ export default class SelectPig extends Component {
     this.state = { fadeIn: true };
     this.toggle = this.toggle.bind(this);
   }
+  //////vvvvvSTATEvvvvvSTATEvvvvvSTATE///
 
   state = {
     jumbotron1: `We're going to process a single medium sized pig from snout to tail.`,
     doorCollapsed: false
   };
+
+  //////^^^^^STATE^^^^^STATE^^^^^STATE
+
   fadeInDoor = () => {
     // Set the opacity of the element to 0
     this.setState({ doorCollapsed: true });
@@ -33,15 +37,21 @@ export default class SelectPig extends Component {
     });
   };
 
-  toggle() {
+  toggle = () => {
     this.setState({
       fadeIn: !this.state.fadeIn
     });
     setTimeout(function() {
       window.open('./stunpig');
     }, 500);
-  }
-  dropPig = () => {};
+  };
+  toggleCollapse = () => {
+    this.props.toggleCollapseSelect();
+    if (this.state.modal) this.toggle();
+  };
+  dropPig = () => {
+    this.toggleCollapse();
+  };
   render() {
     return (
       <Fade in={this.state.fadeIn}>
@@ -69,7 +79,7 @@ export default class SelectPig extends Component {
                     align="right"
                     types={['pig']} // <= allowed drop types
                     // onDrop={this.onDrop.bind(this)}>
-                    onDrop={this.toggle}
+                    onDrop={this.toggleCollapse}
                   >
                     {' '}
                     <div

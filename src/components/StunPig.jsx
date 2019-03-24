@@ -17,7 +17,7 @@ export default class StunPig extends Component {
     this.state = { fadeIn: true };
     this.toggle = this.toggle.bind(this);
   }
-  //////vvvvvSTATEvvvvvSTATEvvvvvSTATE
+  //////vvvvvSTATEvvvvvSTATEvvvvvSTATE///
 
   state = {
     jumbotron1: `We're going to process a single medium sized pig from snout to tail.`,
