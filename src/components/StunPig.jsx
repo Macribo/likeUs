@@ -108,19 +108,16 @@ export default class StunPig extends Component {
               align="right"
               style={{ paddingBottom: '10px', margin: '0 20% 0 0' }}
             >
-              Stun the Pig
+              Choose how to stun the animal
             </h5>
-
-            <p className="lead">Select a stunner from the menu</p>
 
             <Row>
               <Col xs="4">
                 <p id="guide">
                   {' '}
-                  The blow must be dealt with precision and force, <br />
-                  so that the skull is immediately smashed,
-                  <br />
-                  causing instantaneous unconsciousness
+                  The blow must be dealt with precision and force, so that the
+                  skull is immediately smashed, causing instantaneous
+                  unconsciousness
                 </p>
                 <p className="lead">{this.state.defaultLead}</p>
               </Col>
