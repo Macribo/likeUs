@@ -129,7 +129,7 @@ export default class StunPig extends Component {
                     className="btn  btn-outline-warning btn-lg"
                   >
                     <img className="kill-tools" src="images/slam2.png" />
-                    <br /> Head Slam
+                    <br /> <h5>Head Slam</h5>
                   </button>
                 </div>{' '}
                 <div className="kill-with">
@@ -138,7 +138,7 @@ export default class StunPig extends Component {
                     className="btn  btn-outline-warning btn-lg"
                   >
                     <img className="kill-tools" src="images/bolter-gun.png" />
-                    <br /> Bolt-Gun
+                    <br /> <h5>Bolt-Gun</h5>
                   </button>
                 </div>{' '}
                 <div className="kill-with">
@@ -147,7 +147,7 @@ export default class StunPig extends Component {
                     className="btn  btn-outline-warning btn-lg"
                   >
                     <img className="kill-tools" src="images/baton.png" />
-                    <br /> Club
+                    <br /> <h5>Club</h5>
                   </button>
                 </div>{' '}
                 <div className="kill-with">
@@ -159,7 +159,7 @@ export default class StunPig extends Component {
                       className="kill-tools"
                       src="images/slaughter-mask02.png"
                     />
-                    <br /> Slaughter-Mask
+                    <br /> <h5>Slaughter-Mask</h5>
                   </button>
                 </div>
                 {/* </div> */}
