@@ -203,12 +203,17 @@
 }
 .kill-with {
   /* background-color: slategray; */
-  /* border: 2px solid gray; */
+  /* border: 2px solid rgb(192, 19, 19); */
   border-radius: 5px;
   padding: 10px;
   /* align-items: initial; */
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+h5 {
+  margin-top: 10px;
 }
 .tool {
   height: 220px;

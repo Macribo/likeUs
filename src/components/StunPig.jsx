@@ -125,6 +125,12 @@ export default class StunPig extends Component {
               <div className="tools col-8">
                 <div className="kill-with">
                   <button
+                    // style={{
+                    //   display: 'flex',
+                    //   alignItems: 'center',
+                    //   textAlign: 'center',
+                    //   justifyContent: 'center'
+                    // }}
                     type="button"
                     className="btn  btn-outline-warning btn-lg"
                   >
@@ -133,8 +139,8 @@ export default class StunPig extends Component {
                       className="kill-tools"
                       src="images/slam2.png"
                     />
-                    <br /> <h5>Head Slam</h5>
                   </button>
+                  <br /> <h5>Head Slam</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <button
@@ -146,8 +152,8 @@ export default class StunPig extends Component {
                       className="kill-tools"
                       src="images/bolter-gun.png"
                     />
-                    <br /> <h5>Bolt-Gun</h5>
                   </button>
+                  <br /> <h5>Bolt-Gun</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <button
@@ -159,8 +165,8 @@ export default class StunPig extends Component {
                       className="kill-tools"
                       src="images/baton.png"
                     />
-                    <br /> <h5>Club</h5>
                   </button>
+                  <br /> <h5>Club</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <button
@@ -172,8 +178,8 @@ export default class StunPig extends Component {
                       className="kill-tools"
                       src="images/slaughter-mask02.png"
                     />
-                    <br /> <h5>Slaughter-Mask</h5>
                   </button>
+                  <br /> <h5>Slaughter-Mask</h5>
                 </div>
                 {/* </div> */}
                 <div
