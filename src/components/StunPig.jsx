@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import { Jumbotron, Col, Row, Fade, Button } from 'reactstrap';
-import Pig from './Pig';
+import { Jumbotron, Col, Row, Fade } from 'reactstrap';
 import { Draggable, Droppable } from 'react-drag-and-drop';
-import { Collapse } from 'react-collapse';
 import Locker from '../images/slaughter-mask02.png';
 import Stunner from '../images/baton.png';
 import Club from '../images/bolter-gun.png';
-import ToolTitle from './ToolTitle';
-
-import Tool from './Tool';
-import { Container } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class StunPig extends Component {
   constructor(props) {
     super(props);
     this.state = { fadeIn: true };
     this.toggle = this.toggle.bind(this);
+    this.toggleConfirmTool = this.toggleConfirmTool.bind(this);
   }
   //////vvvvvSTATEvvvvvSTATEvvvvvSTATE///
 
@@ -31,11 +27,19 @@ export default class StunPig extends Component {
     club: `url(${Club})`,
     textClub: 'Club',
     textMask: `Slaughter-mask`,
-    textGun: 'Gun'
+    textGun: 'Gun',
+
+    modalTool: false
   };
 
   //////^^^^^STATE^^^^^STATE^^^^^STATE
 
+  toggleConfirmTool() {
+    alert('ok');
+    this.setState(prevState => ({
+      modalTool: !prevState.modalTool
+    }));
+  }
   fadeInDoor = () => {
     // Set the opacity of the element to 0
     this.setState({ doorCollapsed: true });
@@ -193,7 +197,34 @@ export default class StunPig extends Component {
               </div>
             </Row>
           </Jumbotron>
-          {/* </Container> */}
+
+          <Button color="danger" onClick={this.toggleConfirmTool}>
+            {this.props.buttonLabel}
+          </Button>
+          <Modal
+            isOpen={this.state.modalTool}
+            toggleTool={this.toggleConfirmTool}
+            className={this.props.className}
+          >
+            <ModalHeader toggleTool={this.modalTool}>Modal title</ModalHeader>
+            <ModalBody>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={this.toggleConfirmTool}>
+                Do Something
+              </Button>{' '}
+              <Button color="secondary" onClick={this.toggleConfirmTool}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
         </div>
       </Fade>
     );
