@@ -128,7 +128,11 @@ export default class StunPig extends Component {
                     type="button"
                     className="btn  btn-outline-warning btn-lg"
                   >
-                    <img className="kill-tools" src="images/slam2.png" />
+                    <img
+                      style={{ display: 'block' }}
+                      className="kill-tools"
+                      src="images/slam2.png"
+                    />
                     <br /> <h5>Head Slam</h5>
                   </button>
                 </div>{' '}
@@ -137,7 +141,11 @@ export default class StunPig extends Component {
                     type="button"
                     className="btn  btn-outline-warning btn-lg"
                   >
-                    <img className="kill-tools" src="images/bolter-gun.png" />
+                    <img
+                      style={{ display: 'block' }}
+                      className="kill-tools"
+                      src="images/bolter-gun.png"
+                    />
                     <br /> <h5>Bolt-Gun</h5>
                   </button>
                 </div>{' '}
@@ -146,7 +154,11 @@ export default class StunPig extends Component {
                     type="button"
                     className="btn  btn-outline-warning btn-lg"
                   >
-                    <img className="kill-tools" src="images/baton.png" />
+                    <img
+                      style={{ display: 'block' }}
+                      className="kill-tools"
+                      src="images/baton.png"
+                    />
                     <br /> <h5>Club</h5>
                   </button>
                 </div>{' '}
@@ -156,6 +168,7 @@ export default class StunPig extends Component {
                     className="btn  btn-outline-warning btn-lg"
                   >
                     <img
+                      style={{ display: 'block' }}
                       className="kill-tools"
                       src="images/slaughter-mask02.png"
                     />
