@@ -64,12 +64,12 @@ export default class Example extends React.Component {
           className={this.props.className}
         >
           <ModalHeader toggle={this.toggle}>
-            Most reasonable people would never deliberately harm an animal.{' '}
+            Most of us would never deliberately harm an animal.{' '}
           </ModalHeader>
           <ModalBody>
-            Yet the meat branch of human industry is killing animals at an
-            astronomical rate. This is madness. When we are informed, and when
-            we are reasonable, animals likeUs go vegan.
+            Yet the meat sector is harming animals at an astronomical rate, on
+            our behalf. This is madness. When we are informed, and when we are
+            reasonable, animals likeUs go vegan.
           </ModalBody>
           <ModalFooter
             style={{

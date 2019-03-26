@@ -76,7 +76,7 @@ export default class SelectPig extends Component {
                 {' '}
                 <Collapse isOpened={this.state.doorCollapsed ? true : false}>
                   <Droppable
-                    align="right"
+                    align="center"
                     types={['pig']} // <= allowed drop types
                     // onDrop={this.onDrop.bind(this)}>
                     onDrop={this.toggleCollapse}
@@ -85,7 +85,8 @@ export default class SelectPig extends Component {
                     <div
                       className="door"
                       style={{
-                        margin: 0
+                        margin: 0,
+                        padding: 0
                       }}
                     />
                     <h6 align="center">KILL ROOM</h6>
