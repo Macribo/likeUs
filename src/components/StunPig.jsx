@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { Jumbotron, Col, Row, Fade } from 'reactstrap';
+import { Jumbotron, Col, Row, Fade, Button } from 'reactstrap';
 import { Draggable, Droppable } from 'react-drag-and-drop';
 import Locker from '../images/slaughter-mask02.png';
 import Stunner from '../images/baton.png';
+import StunToolModal from './StunToolModal';
 import Club from '../images/bolter-gun.png';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class StunPig extends Component {
   constructor(props) {
     super(props);
     this.state = { fadeIn: true };
     this.toggle = this.toggle.bind(this);
-    this.toggleConfirmTool = this.toggleConfirmTool.bind(this);
   }
   //////vvvvvSTATEvvvvvSTATEvvvvvSTATE///
 
@@ -19,27 +18,18 @@ export default class StunPig extends Component {
     jumbotron1: `We're going to process a single medium sized pig from snout to tail.`,
     doorCollapsed: false,
     defaultLead: `
-
-    `,
+        
+        `,
     selectedTool: 'head slam',
     locker: `url(${Locker})`,
     stunner: `url(${Stunner})`,
     club: `url(${Club})`,
     textClub: 'Club',
     textMask: `Slaughter-mask`,
-    textGun: 'Gun',
-
-    modalTool: false
+    textGun: 'Gun'
   };
-
   //////^^^^^STATE^^^^^STATE^^^^^STATE
 
-  toggleConfirmTool() {
-    alert('ok');
-    this.setState(prevState => ({
-      modalTool: !prevState.modalTool
-    }));
-  }
   fadeInDoor = () => {
     // Set the opacity of the element to 0
     this.setState({ doorCollapsed: true });
@@ -50,14 +40,14 @@ export default class StunPig extends Component {
     clubOrPoleaxe: [
       `You have chosen to slam this animal's head against the floor until she is dead; in accordance with the EU guidelines of order to consume Breith ar an cluais.`,
       `Chas uait é agus breith ar, ós cionn a gcrúbín .
-      Lúas fó dheis é.
-      Lúasc fó chlé é, //chas tímpeal é ? lúasc fó dheis é. Greidhm agat ar ?
-      Luasc i gcoinne an túrlár é
-      : breith greidhm ar agus lúasc é
-
-      : lúasc fó dheis é-
-      chas tímpeal é ? lúasc fó chlé é? chas tímpeal é?
-      lúasc fó dheis é,`,
+            Lúas fó dheis é.
+            Lúasc fó chlé é, //chas tímpeal é ? lúasc fó dheis é. Greidhm agat ar ?
+            Luasc i gcoinne an túrlár é
+            : breith greidhm ar agus lúasc é
+            
+            : lúasc fó dheis é-
+            chas tímpeal é ? lúasc fó chlé é? chas tímpeal é?
+            lúasc fó dheis é,`,
       `Direct blow to skull using a club or poleaxe. The blow must be dealt with precision and force, so that the skull is immediately smashed, causing instantaneous unconsciousness. Pigs have a well-developed frontal cavity so the blow should be aimed slightly above the eyes.`
     ],
     slaughteringMask: [
@@ -93,6 +83,8 @@ export default class StunPig extends Component {
   //vvvvv/RENDER\vvvvv/RENDER\vvvvv/RENDER\
 
   render() {
+    var toolName = 'Placeholder';
+    var toolInfo = `An electric current of high frequency but low voltage (60–80 V) is passed through the brain of an animal for a few seconds to produce unconsciousness.  must be accurately placed (Figs 20 and 21). Places where the skull is thick must be avoided. Electrical contact is impeded by hair and caked mud. The head must not be completely wet otherwise the current will have a short-circuit path avoiding the brain. The electrodes must be applied with strong pressure.`;
     return (
       <Fade in={this.state.fadeIn}>
         <div>
@@ -173,16 +165,11 @@ export default class StunPig extends Component {
                   <br /> <h5>Club</h5>
                 </div>{' '}
                 <div className="kill-with">
-                  <button
-                    type="button"
-                    className="btn  btn-outline-warning btn-lg"
-                  >
-                    <img
-                      style={{ display: 'block' }}
-                      className="kill-tools"
-                      src="images/slaughter-mask02.png"
-                    />
-                  </button>
+                  <StunToolModal
+                    toolName={toolName}
+                    whichToolImg={'images/slaughter-mask02.png'}
+                    toolInfo={toolInfo}
+                  />
                   <br /> <h5>Slaughter-Mask</h5>
                 </div>
                 {/* </div> */}
@@ -198,33 +185,7 @@ export default class StunPig extends Component {
             </Row>
           </Jumbotron>
 
-          <Button color="danger" onClick={this.toggleConfirmTool}>
-            {this.props.buttonLabel}
-          </Button>
-          <Modal
-            isOpen={this.state.modalTool}
-            toggleTool={this.toggleConfirmTool}
-            className={this.props.className}
-          >
-            <ModalHeader toggleTool={this.modalTool}>Modal title</ModalHeader>
-            <ModalBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={this.toggleConfirmTool}>
-                Do Something
-              </Button>{' '}
-              <Button color="secondary" onClick={this.toggleConfirmTool}>
-                Cancel
-              </Button>
-            </ModalFooter>
-          </Modal>
+          {/* </Container> */}
         </div>
       </Fade>
     );
