@@ -120,48 +120,27 @@ export default class StunPig extends Component {
 
               <div className="tools col-8">
                 <div className="kill-with">
-                  <button
-                    // style={{
-                    //   display: 'flex',
-                    //   alignItems: 'center',
-                    //   textAlign: 'center',
-                    //   justifyContent: 'center'
-                    // }}
-                    type="button"
-                    className="btn  btn-outline-warning btn-lg"
-                  >
-                    <img
-                      style={{ display: 'block' }}
-                      className="kill-tools"
-                      src="images/slam2.png"
-                    />
-                  </button>
+                  <StunToolModal
+                    toolName={toolName}
+                    whichToolImg={'images/slam2.png'}
+                    toolInfo={toolInfo}
+                  />
                   <br /> <h5>Head Slam</h5>
                 </div>{' '}
                 <div className="kill-with">
-                  <button
-                    type="button"
-                    className="btn  btn-outline-warning btn-lg"
-                  >
-                    <img
-                      style={{ display: 'block' }}
-                      className="kill-tools"
-                      src="images/bolter-gun.png"
-                    />
-                  </button>
-                  <br /> <h5>Bolt-Gun</h5>
+                  <StunToolModal
+                    toolName={toolName}
+                    whichToolImg={'images/bolter-gun.png'}
+                    toolInfo={toolInfo}
+                  />
+                  <br /> <h5>Stun-Gun</h5>
                 </div>{' '}
                 <div className="kill-with">
-                  <button
-                    type="button"
-                    className="btn  btn-outline-warning btn-lg"
-                  >
-                    <img
-                      style={{ display: 'block' }}
-                      className="kill-tools"
-                      src="images/baton.png"
-                    />
-                  </button>
+                  <StunToolModal
+                    toolName={toolName}
+                    whichToolImg={'images/baton.png'}
+                    toolInfo={toolInfo}
+                  />
                   <br /> <h5>Club</h5>
                 </div>{' '}
                 <div className="kill-with">
