@@ -120,7 +120,7 @@ export default class StunPig extends Component {
                 <div className="kill-with">
                   <StunToolModal
                     id="bg"
-                    goToBleed={this.handleGoToBleed}
+                    goToBleed={this.handleGoToBleed.bind(this)}
                     toolName={toolName[1]}
                     whichToolImg={'images/bolter-gun.png'}
                     toolInfo={toolInfo[1]}
@@ -130,7 +130,7 @@ export default class StunPig extends Component {
                 <div className="kill-with">
                   <StunToolModal
                     id="c"
-                    goToBleed={this.handleGoToBleed}
+                    goToBleed={this.handleGoToBleed.bind(this)}
                     toolName={toolName[2]}
                     whichToolImg={'images/baton.png'}
                     toolInfo={toolInfo[2]}
@@ -140,7 +140,7 @@ export default class StunPig extends Component {
                 <div className="kill-with">
                   <StunToolModal
                     id="sm"
-                    goToBleed={this.handleGoToBleed}
+                    goToBleed={this.handleGoToBleed.bind(this)}
                     toolName={toolName[3]}
                     whichToolImg={'images/slaughter-mask02.png'}
                     toolInfo={toolInfo[3]}
