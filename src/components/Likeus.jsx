@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './Title';
 import SelectPig from './SelectPig';
 import StunPig from './StunPig';
+import BleedPig from './BleedPig';
 
 import { Collapse } from 'react-collapse';
 import Menu from './Menu';
@@ -12,7 +13,8 @@ export default class Likeus extends Component {
   state = {
     showMenu: true,
     pSelectIsOpened: false,
-    pStunIsOpened: false
+    pStunIsOpened: false,
+    pBleedIsOpened: false
   };
 
   //////^^^^^STATE^^^^^STATE^^^^^STATE
@@ -21,7 +23,8 @@ export default class Likeus extends Component {
     this.setState({ pSelectIsOpened: true, showMenu: false });
   };
   toggleCollapseStun = () => {
-    alert('stunned');
+    // alert('stunned');
+    this.setState({ pStunIsOpened: false, pBleedIsOpened: true });
   };
   toggleCollapseSelect = () => {
     this.setState({ pSelectIsOpened: false, pStunIsOpened: true });
@@ -51,6 +54,9 @@ export default class Likeus extends Component {
             </Collapse>
             <Collapse isOpened={this.state.pStunIsOpened}>
               <StunPig toggleCollapseStun={this.toggleCollapseStun} />
+            </Collapse>
+            <Collapse isOpened={this.state.pBleedIsOpened}>
+              <BleedPig toggleCollapseBleed={this.toggleCollapseBleed} />
             </Collapse>
           </Col>
         </Row>

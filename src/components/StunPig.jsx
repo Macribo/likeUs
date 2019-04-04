@@ -26,7 +26,8 @@ export default class StunPig extends Component {
     club: `url(${Club})`,
     textClub: 'Club',
     textMask: `Slaughter-mask`,
-    textGun: 'Gun'
+    textGun: 'Gun',
+    goToBleed: 'false'
   };
   //////^^^^^STATE^^^^^STATE^^^^^STATE
 
@@ -34,28 +35,6 @@ export default class StunPig extends Component {
     // Set the opacity of the element to 0
     this.setState({ doorCollapsed: true });
     // alert('hear door');
-  };
-
-  possibleResults = {
-    clubOrPoleaxe: [
-      `You have chosen to slam this animal's head against the floor until she is dead; in accordance with the EU guidelines of order to consume Breith ar an cluais.`,
-      `Chas uait é agus breith ar, ós cionn a gcrúbín .
-            Lúas fó dheis é.
-            Lúasc fó chlé é, //chas tímpeal é ? lúasc fó dheis é. Greidhm agat ar ?
-            Luasc i gcoinne an túrlár é
-            : breith greidhm ar agus lúasc é
-            
-            : lúasc fó dheis é-
-            chas tímpeal é ? lúasc fó chlé é? chas tímpeal é?
-            lúasc fó dheis é,`,
-      `Direct blow to skull using a club or poleaxe. The blow must be dealt with precision and force, so that the skull is immediately smashed, causing instantaneous unconsciousness. Pigs have a well-developed frontal cavity so the blow should be aimed slightly above the eyes.`
-    ],
-    slaughteringMask: [
-      `A bolt held in the correct position by the mask is driven into the animal's brain by a hammer blow. The device is fitted with a spring which returns the bolt to its original position.`
-    ],
-    electricalStun: [
-      `An electric current of high frequency but low voltage (60–80 V) is passed through the brain of an animal for a few seconds to produce unconsciousness.  must be accurately placed (Figs 20 and 21). Places where the skull is thick must be avoided. Electrical contact is impeded by hair and caked mud. The head must not be completely wet otherwise the current will have a short-circuit path avoiding the brain. The electrodes must be applied with strong pressure.`
-    ]
   };
 
   updateJumbotron = pigStatus => {
@@ -79,12 +58,27 @@ export default class StunPig extends Component {
     }, 500);
   }
   dropPig = () => {};
-
+  handleGoToBleed() {
+    this.setState({ goToBleed: true });
+    // alert(this.state.goToBleed);
+    this.props.toggleCollapseStun();
+  }
   //vvvvv/RENDER\vvvvv/RENDER\vvvvv/RENDER\
 
   render() {
-    var toolName = 'Placeholder';
-    var toolInfo = `An electric current of high frequency but low voltage (60–80 V) is passed through the brain of an animal for a few seconds to produce unconsciousness.  must be accurately placed (Figs 20 and 21). Places where the skull is thick must be avoided. Electrical contact is impeded by hair and caked mud. The head must not be completely wet otherwise the current will have a short-circuit path avoiding the brain. The electrodes must be applied with strong pressure.`;
+    var toolName = [
+      `Head Slam`,
+      `Stun Gun`,
+      `Direct blow to skull using a club or poleaxe`,
+      `Slaughter Mask`
+    ];
+    var toolInfo = [
+      `You are choosing to lift this animal by the hind legs and "slam" it's head against the floor or wall until it is incapable of standing back up again. Is this correct?`,
+      `You are choosing to pass an electric current through the creature's brain until stunned.  Caution: electodes must be accurately placed (Figs 20 and 21). Caution: places where the skull is thick must be avoided. Caution: Electrical contact is impeded by hair and caked mud. 
+      Caution: Excessive moisture may short-circuit the current flow, missing the brain. Apply the electrodes with strong pressure. Stand clear. Proceed?`,
+      `You are choosing to stun the animal by smashing it's skull in with a club. Is this correct?`,
+      `You are choosing to render this animal unconscious with the Slaughter Mask method. The mask is placed upon the beast. A bolt held in the correct position by the mask is driven into the animal's brain by a hammer blow. The device is fitted with a spring which returns the bolt to its original position. Is this correct?`
+    ];
     return (
       <Fade in={this.state.fadeIn}>
         <div>
@@ -104,50 +98,52 @@ export default class StunPig extends Component {
               align="right"
               style={{ paddingBottom: '10px', margin: '0 20% 0 0' }}
             >
-              Choose how to stun the animal
+              Choose stun method
             </h5>
 
             <Row>
               <Col xs="4">
-                <p id="guide">
-                  {' '}
-                  The blow must be dealt with precision and force, so that the
-                  skull is immediately smashed, causing instantaneous
-                  unconsciousness
-                </p>
                 <p className="lead">{this.state.defaultLead}</p>
               </Col>
 
-              <div className="tools col-8">
+              <div className="tools col-12">
                 <div className="kill-with">
                   <StunToolModal
-                    toolName={toolName}
+                    id="hs"
+                    goToBleed={this.handleGoToBleed.bind(this)}
+                    toolName={toolName[0]}
                     whichToolImg={'images/slam2.png'}
-                    toolInfo={toolInfo}
+                    toolInfo={toolInfo[0]}
                   />
                   <br /> <h5>Head Slam</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <StunToolModal
-                    toolName={toolName}
+                    id="bg"
+                    goToBleed={this.handleGoToBleed}
+                    toolName={toolName[1]}
                     whichToolImg={'images/bolter-gun.png'}
-                    toolInfo={toolInfo}
+                    toolInfo={toolInfo[1]}
                   />
                   <br /> <h5>Stun-Gun</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <StunToolModal
-                    toolName={toolName}
+                    id="c"
+                    goToBleed={this.handleGoToBleed}
+                    toolName={toolName[2]}
                     whichToolImg={'images/baton.png'}
-                    toolInfo={toolInfo}
+                    toolInfo={toolInfo[2]}
                   />
                   <br /> <h5>Club</h5>
                 </div>{' '}
                 <div className="kill-with">
                   <StunToolModal
-                    toolName={toolName}
+                    id="sm"
+                    goToBleed={this.handleGoToBleed}
+                    toolName={toolName[3]}
                     whichToolImg={'images/slaughter-mask02.png'}
-                    toolInfo={toolInfo}
+                    toolInfo={toolInfo[3]}
                   />
                   <br /> <h5>Slaughter-Mask</h5>
                 </div>

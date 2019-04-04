@@ -5,7 +5,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 export default class StunToolModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modal: false, name: '', team: '', country: '' };
+    this.state = { modal: false, goToBleed: false };
 
     this.toggle = this.toggle.bind(this);
   }
@@ -15,19 +15,13 @@ export default class StunToolModal extends React.Component {
       modal: !this.state.modal
     });
   }
-  handleChangeName(event) {
-    this.setState({ name: event.target.value });
-  }
-  handleChangeTeam(event) {
-    this.setState({ team: event.target.value });
-  }
-  handleChangeCountry(event) {
-    this.setState({ country: event.target.value });
-  }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
+  proceed = () => {
+    // alert(this.props.id);
+    this.props.goToBleed();
+    this.toggle();
+    // alert(this.state.goToBleed);
+  };
 
   render() {
     return (
@@ -47,14 +41,11 @@ export default class StunToolModal extends React.Component {
               {this.props.toolImg}
             </ModalBody>
             <ModalFooter>
-              <input
-                type="submit"
-                value="Submit"
-                color="primary"
-                className="btn btn-primary"
-              />
-              <Button color="danger" onClick={this.toggle}>
-                Cancel
+              <Button color="warning" onClick={this.proceed}>
+                Proceed
+              </Button>
+              <Button color="secondary" onClick={this.toggle}>
+                Back
               </Button>
             </ModalFooter>
           </form>
