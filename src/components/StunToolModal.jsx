@@ -20,6 +20,9 @@ export default class StunToolModal extends React.Component {
     // alert(this.props.id);
     this.props.goToBleed();
     this.toggle();
+    window.location.assign(
+      'https://www.figma.com/proto/x16vcW37yugGKZ1re2ZTmd/LikeUs?node-id=0%3A1&scaling=contain'
+    );
     // alert(this.state.goToBleed);
   };
 
